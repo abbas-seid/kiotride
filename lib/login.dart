@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kiotride/buspage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,12 +15,22 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    var widthy = screenSize.width;
+    var heighty = screenSize.height;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        leading: Image.asset(
+          'assets/bus.png',
+        ),
+        title: Text(
+          'KIOTRIDE',
+          style:
+              TextStyle(fontWeight: FontWeight.bold, color: Color(0xff3B3B3B)),
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(36.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -45,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(26.0),
                 border: Border.all(
-                  color: Colors.grey,
+                  color: Color(0xff34586E),
                   width: 1.0,
                 ),
               ),
@@ -73,8 +84,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Text('Remember Me'),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(
+              height: 16,
+            ),
             ElevatedButton(
+              style: ButtonStyle(),
               onPressed: _login,
               child: const Text('Login'),
             ),
