@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kiotride/login.dart';
 import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
+import 'package:kiotride/userpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const CheckPage(),
+      home: const UserPage(),
     );
   }
 }
