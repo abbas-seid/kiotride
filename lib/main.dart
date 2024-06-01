@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kiotride/login.dart';
+import 'package:kiotride/buspage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const LoginScreen(),
+      home: const BusPage(),
     );
   }
 }
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               child: Text('KIOTRIDE',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Color(0xFFF7CB2D),
                       fontSize: 40,
                       fontFamily: 'Cinzel',
                       fontWeight: FontWeight.bold)),
