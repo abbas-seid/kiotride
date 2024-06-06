@@ -3,6 +3,7 @@ import 'package:kiotride/login.dart';
 import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
+import 'package:kiotride/busdesc.dart';
 
 class BusPage extends StatefulWidget {
   const BusPage({super.key});
@@ -114,15 +115,67 @@ class _BusPageState extends State<BusPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomButton(text: 'Bus-1', onPressed: () {}),
-                  CustomButton(text: 'Bus-1', onPressed: () {}),
+                  CustomButton(
+                      text: 'Bus-1',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusDesc(
+                              destin: 'Quteba',
+                              busid: '3312',
+                              from: 'KIOT Campus',
+                            ),
+                          ),
+                        );
+                      }),
+                  CustomButton(
+                      text: 'Bus-2',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusDesc(
+                              destin: 'Dessie',
+                              busid: '3313',
+                              from: 'KIOT Campus',
+                            ),
+                          ),
+                        );
+                      }),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomButton(text: 'Bus-1', onPressed: () {}),
-                  CustomButton(text: 'Bus-1', onPressed: () {}),
+                  CustomButton(
+                      text: 'Bus-3',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusDesc(
+                              destin: 'Sheshaber',
+                              busid: '3314',
+                              from: 'KIOT Campus',
+                            ),
+                          ),
+                        );
+                      }),
+                  CustomButton(
+                      text: 'Bus-4',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusDesc(
+                              destin: 'Adisu Menafesha',
+                              busid: '3315',
+                              from: 'KIOT Campus',
+                            ),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ],

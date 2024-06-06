@@ -6,7 +6,18 @@ import 'package:kiotride/userpage.dart';
 import 'package:kiotride/bottombar.dart';
 
 class UserPage extends StatefulWidget {
-  const UserPage({super.key});
+  final String name;
+  final String idnumb;
+  final String buscode;
+  final String imageUrl;
+
+  const UserPage({
+    Key? key,
+    required this.name,
+    required this.idnumb,
+    required this.buscode,
+    required this.imageUrl,
+  }) : super(key: key);
 
   @override
   State<UserPage> createState() => _UserPageState();
@@ -35,9 +46,10 @@ class _UserPageState extends State<UserPage> {
           children: [
             SizedBox(height: heighty * 0.01),
             Displayer(
-              name: 'Rahel Yohannes',
-              idnumb: 'Wour/1274/13',
-              buscode: 'Bus-Code-3312',
+              name: widget.name,
+              idnumb: widget.idnumb,
+              buscode: widget.buscode,
+              imageUrl: widget.imageUrl, // Corrected access to imageUrl
             ),
           ],
         ),
@@ -51,12 +63,14 @@ class Displayer extends StatelessWidget {
   final String name;
   final String idnumb;
   final String buscode;
+  final String imageUrl;
 
   const Displayer({
     Key? key,
     required this.name,
     required this.idnumb,
     required this.buscode,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -73,7 +87,7 @@ class Displayer extends StatelessWidget {
         children: [
           ClipOval(
             child: Image.asset(
-              'assets/girlethio.jpg', // Replace with your image URL
+              imageUrl, // Replace with your image URL
               width: 140,
               height: 140,
               fit: BoxFit.cover, // Adjust the fit as needed

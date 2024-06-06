@@ -4,6 +4,7 @@ import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/userlist.dart';
+import 'package:kiotride/busdesc.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -55,7 +56,18 @@ class _BottomBarState extends State<BottomBar> {
                   ),
                   Expanded(
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusDesc(
+                              destin: 'Quteba',
+                              busid: '3312',
+                              from: 'KIOT Campus',
+                            ),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.favorite_outlined,
                         color: Colors.white,
@@ -81,14 +93,7 @@ class _BottomBarState extends State<BottomBar> {
                   ),
                   Expanded(
                     child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => UserPage(),
-                          ),
-                        );
-                      },
+                      onPressed: () {},
                       icon: Icon(
                         Icons.person,
                         color: Colors.white,

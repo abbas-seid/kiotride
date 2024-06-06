@@ -5,6 +5,7 @@ import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/bottombar.dart';
+import 'package:kiotride/busdesc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
