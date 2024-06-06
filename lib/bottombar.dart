@@ -3,6 +3,7 @@ import 'package:kiotride/login.dart';
 import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
+import 'package:kiotride/userlist.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -104,19 +105,29 @@ class _BottomBarState extends State<BottomBar> {
             left: 0,
             right: 0,
             top: 0,
-            child: Container(
-              width: 64,
-              height: 64,
-              decoration: BoxDecoration(
-                color: Colors.amber,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.add,
-                size: 42.0,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Userlist(students: students),
+                  ),
+                );
+              },
+              child: Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.add,
+                  size: 42.0,
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

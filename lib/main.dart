@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async' show Timer;
 import 'package:kiotride/login.dart';
 import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
@@ -33,6 +34,21 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    super.initState();
+    // Execute the navigation after the frame has been built
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      // Navigates to the BusPage after 2 seconds
+      Future.delayed(Duration(seconds: 2), () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => BusPage(),
+          ),
+        );
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var widthy = screenSize.width;
@@ -80,7 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBar(),
     );
   }
 }
