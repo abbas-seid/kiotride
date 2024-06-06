@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kiotride/login.dart';
+import 'package:kiotride/bottombar.dart';
+import 'package:kiotride/checkpage.dart';
+import 'package:kiotride/userpage.dart';
 
 class BusPage extends StatefulWidget {
   const BusPage({super.key});
@@ -122,17 +125,11 @@ class _BusPageState extends State<BusPage> {
                   CustomButton(text: 'Bus-1', onPressed: () {}),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomButton(text: 'Bus-1', onPressed: () {}),
-                  CustomButton(text: 'Bus-1', onPressed: () {}),
-                ],
-              ),
             ],
           ))
         ],
       ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

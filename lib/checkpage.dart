@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kiotride/login.dart';
+import 'package:kiotride/buspage.dart';
+import 'package:kiotride/checkpage.dart';
+import 'package:kiotride/userpage.dart';
+import 'package:kiotride/bottombar.dart';
 
 class CheckPage extends StatefulWidget {
   const CheckPage({super.key});
@@ -133,6 +137,7 @@ class _CheckPageState extends State<CheckPage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

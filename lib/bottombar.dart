@@ -4,14 +4,14 @@ import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 
-class BotttomBar extends StatefulWidget {
-  const BotttomBar({super.key});
+class BottomBar extends StatefulWidget {
+  const BottomBar({super.key});
 
   @override
-  State<BotttomBar> createState() => _BotttomBarState();
+  State<BottomBar> createState() => _BottomBarState();
 }
 
-class _BotttomBarState extends State<BotttomBar> {
+class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +35,14 @@ class _BotttomBarState extends State<BotttomBar> {
                 children: [
                   Expanded(
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusPage(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.home,
                         color: Colors.white,
@@ -54,7 +61,14 @@ class _BotttomBarState extends State<BotttomBar> {
                   Spacer(),
                   Expanded(
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CheckPage(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.message,
                         color: Colors.white,
