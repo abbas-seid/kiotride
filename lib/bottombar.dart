@@ -16,7 +16,10 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return Container(
       height: 87,
-      margin: EdgeInsets.all(22),
+      margin: EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 22,
+      ),
       child: Stack(
         children: [
           Positioned(
@@ -77,10 +80,17 @@ class _BottomBarState extends State<BottomBar> {
                   ),
                   Expanded(
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => UserPage(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.person,
-                        color: Colors.orangeAccent,
+                        color: Colors.white,
                       ),
                     ),
                   ),

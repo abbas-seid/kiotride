@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kiotride/login.dart';
+import 'package:kiotride/buspage.dart';
+import 'package:kiotride/checkpage.dart';
+import 'package:kiotride/userpage.dart';
+import 'package:kiotride/bottombar.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});
@@ -29,7 +33,7 @@ class _UserPageState extends State<UserPage> {
         padding: EdgeInsets.all(36),
         child: Column(
           children: [
-            SizedBox(height: heighty * 0.04),
+            SizedBox(height: heighty * 0.01),
             Displayer(
               name: 'Rahel Yohannes',
               idnumb: 'Wour/1274/13',
@@ -38,6 +42,7 @@ class _UserPageState extends State<UserPage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }
@@ -75,10 +80,10 @@ class Displayer extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: heighty * 0.10,
+            height: heighty * 0.05,
           ),
           Container(
-            height: heighty * 0.11, // Adjust the height as needed
+            height: heighty * 0.09, // Adjust the height as needed
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color:
@@ -105,7 +110,7 @@ class Displayer extends StatelessWidget {
           ),
           SizedBox(height: heighty * 0.04),
           Container(
-            height: heighty * 0.11, // Adjust the height as needed
+            height: heighty * 0.09, // Adjust the height as needed
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color:
@@ -132,7 +137,7 @@ class Displayer extends StatelessWidget {
           ),
           SizedBox(height: heighty * 0.04),
           Container(
-            height: heighty * 0.11, // Adjust the height as needed
+            height: heighty * 0.09, // Adjust the height as needed
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color:
