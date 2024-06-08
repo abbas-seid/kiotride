@@ -22,7 +22,7 @@ final List<Student> students = [
   Student(
     photo: 'assets/peoples/abebe.webp',
     name: 'Abebe Minale',
-    id: 'Wour/3907/13',
+    id: 'Wour/3970/13',
   ),
   Student(
     photo: 'assets/peoples/ahmed.webp',
@@ -211,32 +211,54 @@ class Userlist extends StatelessWidget {
         itemCount: students.length,
         itemBuilder: (context, index) {
           final student = students[index];
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => UserPage(
-                    name: student.name,
-                    idnumb: student.id,
-                    buscode: 'Your bus code here',
-                    imageUrl: student.photo, // Use student's photo URL
+          return Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Container(
+              padding: EdgeInsets.all(8.0), // Add padding inside the container
+              decoration: BoxDecoration(
+                // Add border
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3), // Shadow color
+                    spreadRadius: 2.5, // Spread radius
+                    blurRadius: 1, // Blur radius
+                    offset: Offset(0, 0), // Shadow position
                   ),
-                ),
-              );
-            },
-            child: ListTile(
-              leading: ClipOval(
-                child: Image.asset(
-                  student.photo ??
-                      'assets/placeholder.png', // Use placeholder image if photo is null
-                  width: 50,
-                  height: 50,
-                  fit: BoxFit.cover,
+                ],
+              ),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UserPage(
+                        name: student.name,
+                        idnumb: student.id,
+                        buscode: 'Your bus code here',
+                        imageUrl: student.photo, // Use student's photo URL
+                      ),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  leading: ClipOval(
+                    child: Image.asset(
+                      student.photo ??
+                          'assets/placeholder.png', // Use placeholder image if photo is null
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  title: Text(
+                    student.name,
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  subtitle: Text(student.id),
                 ),
               ),
-              title: Text(student.name),
-              subtitle: Text(student.id),
             ),
           );
         },

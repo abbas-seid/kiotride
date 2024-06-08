@@ -6,9 +6,14 @@ import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/busdesc.dart';
+import 'package:provider/provider.dart';
+import 'package:kiotride/theme_data.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,8 +23,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      darkTheme: darkmode,
       home: MyHomePage(),
+      routes: {
+        '/buspage': (context) => BusPage(),
+      },
     );
   }
 }
@@ -43,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Future.delayed(Duration(seconds: 2), () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => BusPage(),
+            builder: (context) => LoginScreen(),
           ),
         );
       });
@@ -55,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

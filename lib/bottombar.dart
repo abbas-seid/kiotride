@@ -16,124 +16,88 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 87,
-      margin: EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 22,
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            right: 0,
-            left: 0,
-            top: 17,
-            child: Container(
-              height: 70,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(25),
-                ),
-                color: Color(0xff34586E),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BusPage(),
-                          ),
-                        );
-                      },
-                      icon: Icon(
-                        Icons.home,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BusDesc(
-                              destin: 'Quteba',
-                              busid: '3312',
-                              from: 'KIOT Campus',
-                            ),
-                          ),
-                        );
-                      },
-                      icon: Icon(
-                        Icons.favorite_outlined,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Spacer(),
-                  Expanded(
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CheckPage(),
-                          ),
-                        );
-                      },
-                      icon: Icon(
-                        Icons.message,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.person,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          )
-          /**/
-          ,
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 0,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Userlist(students: students),
-                  ),
-                );
-              },
+    return SingleChildScrollView(
+      child: Container(
+        height: 87,
+        margin: EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 22,
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              right: 0,
+              left: 0,
+              top: 17,
               child: Container(
-                width: 64,
-                height: 64,
+                height: 70,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
-                  shape: BoxShape.circle,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(25),
+                  ),
+                  color: Color(0xff34586E),
                 ),
-                child: Icon(
-                  Icons.add,
-                  size: 42.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BusPage(),
+                            ),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.bus_alert,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  CheckPage(students: students),
+                            ),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.person_search,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Userlist(students: students),
+                            ),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.group,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          )
-        ],
+            )
+            /**/
+            ,
+          ],
+        ),
       ),
     );
   }

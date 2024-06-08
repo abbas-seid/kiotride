@@ -30,6 +30,7 @@ class _UserPageState extends State<UserPage> {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: Image.asset(
           'assets/bus.png',

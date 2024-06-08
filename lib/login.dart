@@ -1,6 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:kiotride/buspage.dart';
 
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Navigation Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: LoginScreen(),
+      routes: {
+        '/buspage': (context) => BusPage(),
+      },
+    );
+  }
+}
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -19,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: Image.asset(
           'assets/bus.png',
@@ -29,70 +52,96 @@ class _LoginScreenState extends State<LoginScreen> {
               TextStyle(fontWeight: FontWeight.bold, color: Color(0xff3B3B3B)),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(36.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(26.0),
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1.0,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(36.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Welcome Back!',
+                style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFF7CB2D)),
+              ),
+              Text(
+                'Please Enter Your Detail',
+                style: TextStyle(
+                  fontSize: 16,
                 ),
               ),
-              child: TextField(
-                controller: _usernameController,
-                decoration: const InputDecoration(
-                  labelText: 'Username',
-                  contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                  border: InputBorder.none,
+              SizedBox(
+                height: heighty * 0.1,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(26.0),
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 1.0,
+                  ),
+                ),
+                child: TextField(
+                  controller: _usernameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Username',
+                    contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 16),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(26.0),
-                border: Border.all(
-                  color: Color(0xff34586E),
-                  width: 1.0,
+              SizedBox(height: 16),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(26.0),
+                  border: Border.all(
+                    color: Color(0xff34586E),
+                    width: 1.0,
+                  ),
+                ),
+                child: TextField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Password',
+                    contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
-              child: TextField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                  border: InputBorder.none,
-                ),
+              const SizedBox(height: 16),
+              Row(
+                children: <Widget>[
+                  Checkbox(
+                    value: _rememberMe,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _rememberMe = value ?? false;
+                      });
+                    },
+                  ),
+                  const Text('Remember Me'),
+                ],
               ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              children: <Widget>[
-                Checkbox(
-                  value: _rememberMe,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      _rememberMe = value ?? false;
-                    });
-                  },
+              const SizedBox(
+                height: 16,
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all<Size>(
+                    Size(widthy * 0.8, heighty * 0.06),
+                  ),
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                      Color(0xFFF7CB2D)), // Set the background color
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
                 ),
-                const Text('Remember Me'),
-              ],
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            ElevatedButton(
-              style: ButtonStyle(),
-              onPressed: _login,
-              child: const Text('Login'),
-            ),
-          ],
+                onPressed: _login,
+                child: const Text('Login'),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -103,29 +152,12 @@ class _LoginScreenState extends State<LoginScreen> {
     final String password = _passwordController.text;
     final bool rememberMe = _rememberMe;
 
-    // You can add your login logic here
-    print('Username: $username');
-    print('Password: $password');
-    print('Remember Me: $rememberMe');
-
-    // For demonstration purposes, let's show a dialog
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Login Info'),
-          content: Text(
-              'Username: $username\nPassword: $password\nRemember Me: $rememberMe'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
+    if (username == 'admin' && password == '123456') {
+      Navigator.pushReplacementNamed(context, '/buspage');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Invalid username or password')),
+      );
+    }
   }
 }

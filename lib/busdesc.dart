@@ -4,6 +4,7 @@ import 'package:kiotride/login.dart';
 import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
+import 'package:kiotride/mydrawer.dart';
 
 class BusDesc extends StatelessWidget {
   final String destin;
@@ -18,6 +19,7 @@ class BusDesc extends StatelessWidget {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
+      backgroundColor: Color(0xECFFFFFF),
       body: Center(
         child: Stack(
           children: [

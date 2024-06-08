@@ -4,6 +4,9 @@ import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/busdesc.dart';
+import 'package:kiotride/mydrawer.dart';
+import 'package:kiotride/theme_data.dart';
+import 'package:provider/provider.dart';
 
 class BusPage extends StatefulWidget {
   const BusPage({super.key});
@@ -18,7 +21,10 @@ class _BusPageState extends State<BusPage> {
     var screenSize = MediaQuery.of(context).size;
     var widthy = screenSize.width;
     var heighty = screenSize.height;
+    IconData iLight = Icons.wb_sunny;
+    IconData iDark = Icons.nights_stay;
     return Scaffold(
+      backgroundColor: Color(0xECFFFFFF),
       appBar: AppBar(
         backgroundColor: Colors.white,
         actions: [
@@ -28,46 +34,7 @@ class _BusPageState extends State<BusPage> {
           ),
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Messages'),
-              onTap: () {
-                // Handle the tap here
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-              onTap: () {
-                // Handle the tap here
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Handle the tap here
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: MyDrawer(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
