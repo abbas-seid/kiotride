@@ -4,6 +4,8 @@ import 'package:kiotride/login.dart';
 import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
+import 'package:kiotride/aboutus.dart';
+import 'package:kiotride/settings.dart';
 import 'package:kiotride/theme_data.dart';
 import 'package:provider/provider.dart';
 
@@ -44,23 +46,16 @@ class MyDrawer extends StatelessWidget {
                 ],
               )),
           ListTile(
-            leading: Icon(Icons.message),
-            title: Text(
-              'Messages',
-              style: TextStyle(fontWeight: FontWeight.w800),
-            ),
-            onTap: () {
-              // Handle the tap here
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.account_circle),
             title: Text(
               'Profile',
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             onTap: () {
-              // Handle the tap here
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutUs()),
+              );
             },
           ),
           ListTile(
@@ -70,7 +65,8 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             onTap: () {
-              // Handle the tap here
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Settings()));
             },
           ),
           SizedBox(height: 90),
