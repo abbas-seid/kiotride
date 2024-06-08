@@ -13,7 +13,7 @@ ThemeData lightmode = ThemeData(
       onSecondary: Colors.blue.withOpacity(0.2),
     ),
     listTileTheme: ListTileThemeData(
-      iconColor: Colors.white,
+      iconColor: Color(0xff34586E),
     ));
 
 ThemeData darkmode = ThemeData(

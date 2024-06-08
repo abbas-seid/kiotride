@@ -40,7 +40,7 @@ final List<Student> students = [
     id: 'Wour/3941/13',
   ),
   Student(
-    photo: 'assets/girlethio.jpg',
+    photo: 'assets/peoples/bahrean.webp',
     name: 'Bahrean Assefa',
     id: 'Wour/4605/13',
   ),
@@ -190,7 +190,7 @@ final List<Student> students = [
     id: 'Wour/4194/13',
   ),
   Student(
-    photo: 'assets/girlethio.jpg', // Placeholder image URL
+    photo: 'assets/peoples/zele.webp', // Placeholder image URL
     name: 'Zelalem Beyene',
     id: 'Wour/4606/13',
   ),
