@@ -4,12 +4,15 @@ import 'package:kiotride/login.dart';
 import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
+import 'package:kiotride/theme_data.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    IconData iLight = Icons.wb_sunny;
+    IconData iDark = Icons.nights_stay;
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -26,11 +29,9 @@ class MyDrawer extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomRight,
                     child: IconButton(
-                      onPressed: () {
-                        // Handle the IconButton tap here
-                      },
-                      icon: Icon(Icons.light_mode_rounded),
-                      color: Colors.black,
+                      onPressed:
+                          Provider.of<ThemeProvider>(context).toggleTheme,
+                      icon: Icon(iLight),
                     ),
                   ),
                   Align(
