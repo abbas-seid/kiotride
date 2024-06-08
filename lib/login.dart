@@ -55,8 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         title: Text(
           'KIOTRIDE',
-          style:
-              TextStyle(fontWeight: FontWeight.bold, color: Color(0xff3B3B3B)),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           IconButton(
