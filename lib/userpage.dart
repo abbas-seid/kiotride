@@ -81,7 +81,7 @@ class Displayer extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

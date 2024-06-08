@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:kiotride/login.dart';
 import 'package:kiotride/buspage.dart';
-
-import 'package:flutter/material.dart';
+import 'package:kiotride/checkpage.dart';
+import 'package:kiotride/userpage.dart';
+import 'package:kiotride/userlist.dart';
+import 'package:kiotride/busdesc.dart';
+import 'package:kiotride/theme_data.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         leading: Image.asset(
           'assets/bus.png',

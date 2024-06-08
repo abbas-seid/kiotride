@@ -5,6 +5,8 @@ import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/userlist.dart';
 import 'package:kiotride/busdesc.dart';
+import 'package:kiotride/theme_data.dart';
+import 'package:provider/provider.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -35,7 +37,7 @@ class _BottomBarState extends State<BottomBar> {
                   borderRadius: BorderRadius.all(
                     Radius.circular(25),
                   ),
-                  color: Color(0xff34586E),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -52,7 +54,7 @@ class _BottomBarState extends State<BottomBar> {
                         },
                         icon: Icon(
                           Icons.bus_alert,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),
@@ -69,7 +71,7 @@ class _BottomBarState extends State<BottomBar> {
                         },
                         icon: Icon(
                           Icons.person_search,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),
@@ -86,7 +88,7 @@ class _BottomBarState extends State<BottomBar> {
                         },
                         icon: Icon(
                           Icons.group,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),

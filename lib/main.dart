@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Future.delayed(Duration(seconds: 2), () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => LoginScreen(),
+            builder: (context) => BusPage(),
           ),
         );
       });

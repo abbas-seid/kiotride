@@ -24,9 +24,9 @@ class _BusPageState extends State<BusPage> {
     IconData iLight = Icons.wb_sunny;
     IconData iDark = Icons.nights_stay;
     return Scaffold(
-      backgroundColor: Color(0xECFFFFFF),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
           Image.asset(
             'assets/bus.png',
@@ -45,7 +45,7 @@ class _BusPageState extends State<BusPage> {
               style: TextStyle(
                   fontSize: 31,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff34586E)),
+                  color: Theme.of(context).colorScheme.primary),
             ),
           ),
           SizedBox(
@@ -70,7 +70,7 @@ class _BusPageState extends State<BusPage> {
               style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff34586E)),
+                  color: Theme.of(context).colorScheme.primary),
             ),
           ),
           SizedBox(

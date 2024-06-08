@@ -4,29 +4,35 @@ ThemeData lightmode = ThemeData(
     scaffoldBackgroundColor: Color(0xECFFFFFF),
     drawerTheme: DrawerThemeData(backgroundColor: Colors.white),
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.white,
-    ),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Color(0xff34586E),
+        )),
     colorScheme: ColorScheme.light(
       background: Colors.white,
-      primary: Colors.white,
-      secondary: Colors.green.withOpacity(0.9),
-      onSecondary: Colors.blue.withOpacity(0.2),
+      primary: Color(0xff34586E),
+      secondary: Color(0xfffffffff),
+      onSecondary: Colors.white,
+      surface: Color(0xFFF7CB2D),
+      onSurface: Colors.white,
     ),
-    listTileTheme: ListTileThemeData(
-      iconColor: Color(0xff34586E),
-    ));
+    listTileTheme: ListTileThemeData(iconColor: Colors.white));
 
 ThemeData darkmode = ThemeData(
     scaffoldBackgroundColor: Color(0xFF121212),
     drawerTheme: DrawerThemeData(backgroundColor: Color(0xFF121212)),
     appBarTheme: AppBarTheme(
-      backgroundColor: Color(0xFF121212),
-    ),
+        backgroundColor: Color(0xFF121212),
+        iconTheme: IconThemeData(
+          color: Color(0xff34586E),
+        )),
     colorScheme: ColorScheme.dark(
       background: Color(0xFFFFFFFF),
       primary: Color(0xFFFFFFFF),
-      secondary: Colors.black.withOpacity(0.9),
-      onSecondary: Colors.white.withOpacity(0.2),
+      secondary: Color(0xFF121212),
+      onSecondary: Colors.black,
+      surface: Colors.white,
+      onSurface: Colors.black,
     ),
     listTileTheme: ListTileThemeData(
       iconColor: Color(0xFFFFFFFF),
