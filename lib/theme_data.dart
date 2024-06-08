@@ -16,6 +16,11 @@ ThemeData lightmode = ThemeData(
       surface: Color(0xFFF7CB2D),
       onSurface: Colors.white,
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(
+        color: Colors.black, // Change label color here
+      ),
+    ),
     listTileTheme: ListTileThemeData(iconColor: Colors.white));
 
 ThemeData darkmode = ThemeData(
@@ -33,6 +38,11 @@ ThemeData darkmode = ThemeData(
       onSecondary: Colors.black,
       surface: Colors.white,
       onSurface: Colors.black,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(
+        color: Colors.white, // Change label color here
+      ),
     ),
     listTileTheme: ListTileThemeData(
       iconColor: Color(0xFFFFFFFF),

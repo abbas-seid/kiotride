@@ -35,6 +35,7 @@ class _CheckPageState extends State<CheckPage> {
     var screenSize = MediaQuery.of(context).size;
     var widthy = screenSize.width;
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.white,
         actions: [
@@ -59,7 +60,7 @@ class _CheckPageState extends State<CheckPage> {
                       style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xff34586E)),
+                          color: Theme.of(context).colorScheme.primary),
                     ),
                   ),
                 ],
@@ -80,7 +81,7 @@ class _CheckPageState extends State<CheckPage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(26.0),
                   border: Border.all(
-                    color: Color(0xff34586E),
+                    color: Theme.of(context).colorScheme.primary,
                     width: 2.0,
                   ),
                 ),
@@ -100,15 +101,18 @@ class _CheckPageState extends State<CheckPage> {
                 width: widthy * 0.60,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Color(0xFFF7CB2D)),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).colorScheme.surface),
+                    foregroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).colorScheme.onSurface),
                   ),
                   onPressed: _searchStudent,
                   child: const Text(
                     'Check User',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),

@@ -174,7 +174,7 @@ class CustomButton extends StatelessWidget {
         width: 130,
         padding: EdgeInsets.all(4),
         decoration: BoxDecoration(
-          color: Color(0xFFF7CB2D),
+          color: Theme.of(context).colorScheme.surface,
           // Border color for visibility
           borderRadius: BorderRadius.circular(10),
         ),
@@ -182,7 +182,9 @@ class CustomButton extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              color: Colors.white, // Text color for visibility
+              color: Theme.of(context)
+                  .colorScheme
+                  .onSurface, // Text color for visibility
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
