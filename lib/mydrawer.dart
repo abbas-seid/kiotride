@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.account_circle),
             title: Text(
-              'Profile',
+              'About App',
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             onTap: () {

@@ -72,6 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+                height: 50,
+              ),
               Text(
                 'Welcome Back!',
                 style: TextStyle(
@@ -82,8 +85,8 @@ class _LoginScreenState extends State<LoginScreen> {
               Text(
                 'Please Enter Your Detail',
                 style: TextStyle(
-                  fontSize: 16,
-                ),
+                    fontSize: 16,
+                    color: Theme.of(context).colorScheme.background),
               ),
               SizedBox(
                 height: heighty * 0.1,

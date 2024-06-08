@@ -45,12 +45,6 @@ class _UserPageState extends State<UserPage> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: Provider.of<ThemeProvider>(context).toggleTheme,
-            icon: Icon(iLight),
-          ),
-        ],
       ),
       body: Container(
         padding: EdgeInsets.all(36),
@@ -97,12 +91,25 @@ class Displayer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          ClipOval(
-            child: Image.asset(
-              imageUrl, // Replace with your image URL
-              width: 140,
-              height: 140,
-              fit: BoxFit.cover, // Adjust the fit as needed
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ImageScreen(imageUrl: imageUrl),
+                ),
+              );
+            },
+            child: Hero(
+              tag: imageUrl,
+              child: ClipOval(
+                child: Image.asset(
+                  imageUrl, // Replace with your image URL
+                  width: 140,
+                  height: 140,
+                  fit: BoxFit.cover, // Adjust the fit as needed
+                ),
+              ),
             ),
           ),
           SizedBox(
@@ -200,6 +207,38 @@ class Displayer extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ImageScreen extends StatelessWidget {
+  final String imageUrl;
+
+  const ImageScreen({Key? key, required this.imageUrl}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black, // Set background color to black
+      appBar: AppBar(
+        backgroundColor: Colors.black, // Set app bar color to black
+        leading: IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () {
+            Navigator.pop(
+                context); // Navigate back when close button is pressed
+          },
+        ),
+      ),
+      body: Center(
+        child: Hero(
+          tag: imageUrl,
+          child: Image.asset(
+            imageUrl,
+            fit: BoxFit.contain, // Fit the image inside the screen
+          ),
+        ),
       ),
     );
   }

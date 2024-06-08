@@ -9,7 +9,7 @@ import 'package:kiotride/mydrawer.dart';
 
 class CheckPage extends StatefulWidget {
   final List<Student> students;
-  const CheckPage({super.key, required this.students});
+  const CheckPage({required this.students});
 
   @override
   State<CheckPage> createState() => _CheckPageState();
@@ -92,6 +92,8 @@ class _CheckPageState extends State<CheckPage> {
                     contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
                     border: InputBorder.none,
                   ),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.background),
                 ),
               ),
               SizedBox(
@@ -121,46 +123,78 @@ class _CheckPageState extends State<CheckPage> {
               ),
               _searched
                   ? Column(
-                      children: _filteredStudents.isNotEmpty
-                          ? _filteredStudents.map((student) {
-                              return Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.3),
-                                        spreadRadius: 2.5,
-                                        blurRadius: 1,
-                                        offset: Offset(0, 0),
-                                      ),
-                                    ],
-                                  ),
-                                  child: ListTile(
-                                    leading: ClipOval(
-                                      child: Image.asset(
-                                        student.photo,
-                                        width: 50,
-                                        height: 50,
-                                        fit: BoxFit.cover,
+                      children: [
+                        _filteredStudents.isNotEmpty
+                            ? Column(
+                                children: _filteredStudents.map((student) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => UserPage(
+                                            name: student.name,
+                                            idnumb: student.id,
+                                            buscode: student.buscode,
+                                            imageUrl: student.photo,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Container(
+                                        padding: EdgeInsets.all(8.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSecondary,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.grey.withOpacity(0.3),
+                                              spreadRadius: 2.5,
+                                              blurRadius: 1,
+                                              offset: Offset(0, 0),
+                                            ),
+                                          ],
+                                        ),
+                                        child: ListTile(
+                                          leading: ClipOval(
+                                            child: Image.asset(
+                                              student.photo,
+                                              width: 50,
+                                              height: 50,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                          title: Text(
+                                            student.name,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          subtitle: Text(student.id),
+                                        ),
                                       ),
                                     ),
-                                    title: Text(
-                                      student.name,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    subtitle: Text(student.id),
-                                  ),
-                                ),
-                              );
-                            }).toList()
-                          : [Text('No students found.')],
+                                  );
+                                }).toList(),
+                              )
+                            : Text(
+                                'No students found.',
+                                style: TextStyle(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background),
+                              ),
+                      ],
                     )
                   : Container(),
+              SizedBox(
+                height: 40,
+              )
             ],
           ),
         ),

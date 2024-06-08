@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: Provider.of<ThemeProvider>(context).themeData,
       darkTheme: darkmode,
-      home: LoginScreen(),
+      home: MyHomePage(),
       routes: {
         '/buspage': (context) => BusPage(),
       },
@@ -49,10 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
     // Execute the navigation after the frame has been built
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       // Navigates to the BusPage after 2 seconds
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(Duration(seconds: 3), () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => BusPage(),
+            builder: (context) => LoginScreen(),
           ),
         );
       });
