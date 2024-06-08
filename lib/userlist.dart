@@ -177,7 +177,7 @@ final List<Student> students = [
     id: 'Wour/4567/13',
   ),
   Student(
-    photo: 'assets/peoples/seble.webp',
+    photo: 'assets/peoples/sol.webp',
     name: 'Solomon Mengesha',
     id: 'Wour/2303/13',
   ),

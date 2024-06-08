@@ -20,8 +20,9 @@ ThemeData lightmode = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
-      color: Colors.white, // Change label color here
+      color: Colors.black, // Change label color here
     ),
+    focusColor: Colors.black,
   ),
   listTileTheme: ListTileThemeData(
       tileColor: Colors.white,
@@ -62,8 +63,9 @@ ThemeData darkmode = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
-      color: Colors.black,
+      color: Colors.white,
     ),
+    focusColor: Colors.white,
   ),
   listTileTheme: ListTileThemeData(
     tileColor: Color(0xFF121212),

@@ -5,6 +5,9 @@ import 'package:kiotride/bottombar.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/mydrawer.dart';
+import 'package:kiotride/busdesc.dart';
+import 'package:kiotride/theme_data.dart';
+import 'package:provider/provider.dart';
 
 class BusDesc extends StatelessWidget {
   final String destin;
@@ -19,7 +22,7 @@ class BusDesc extends StatelessWidget {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
-      backgroundColor: Color(0xECFFFFFF),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
         child: Stack(
           children: [
@@ -60,11 +63,14 @@ class BusDesc extends StatelessWidget {
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ),
                     child: Text(
-                      'bus schedule\nMorning 1:00 From Quteba to KIOT Campus\nAfternoon 11:00 From KIOT Campus to Quteba',
-                      style: TextStyle(fontSize: 16),
+                      'bus schedule\nMorning 1:00 From $destin to KIOT Campus\nAfternoon 11:00 From KIOT Campus to $destin',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
                   ),
                   SizedBox(height: 30),
@@ -73,12 +79,15 @@ class BusDesc extends StatelessWidget {
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ),
                     child: Text(
                       'Your Bus!!!',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -112,7 +121,15 @@ class BusDescItem extends StatelessWidget {
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.onSecondary,
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.shadow, // Shadow color
+            spreadRadius: 1.5, // Spread radius
+            blurRadius: 0.2, // Blur radius
+            offset: Offset(0, 0), // Shadow position
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,14 +139,14 @@ class BusDescItem extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Color(0xff34586E)),
+                color: Theme.of(context).colorScheme.primary),
           ),
           Text(
             content,
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff34586E)),
+                color: Theme.of(context).colorScheme.primary),
           ),
         ],
       ),

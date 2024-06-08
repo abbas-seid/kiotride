@@ -103,6 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
                     border: InputBorder.none,
                   ),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.background),
                 ),
               ),
               SizedBox(height: 16),
@@ -122,6 +124,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
                     border: InputBorder.none,
                   ),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.background),
                 ),
               ),
               const SizedBox(height: 16),
