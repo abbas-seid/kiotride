@@ -28,6 +28,8 @@ class UserPage extends StatefulWidget {
 class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
+    IconData iLight = Icons.wb_sunny;
+    IconData iDark = Icons.nights_stay;
     var screenSize = MediaQuery.of(context).size;
     var widthy = screenSize.width;
     var heighty = screenSize.height;
@@ -43,6 +45,12 @@ class _UserPageState extends State<UserPage> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: Provider.of<ThemeProvider>(context).toggleTheme,
+            icon: Icon(iLight),
+          ),
+        ],
       ),
       body: Container(
         padding: EdgeInsets.all(36),
