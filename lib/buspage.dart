@@ -26,7 +26,7 @@ class _BusPageState extends State<BusPage> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         actions: [
           Image.asset(
             'assets/bus.png',

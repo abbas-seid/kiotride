@@ -4,6 +4,8 @@ import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/bottombar.dart';
+import 'package:kiotride/theme_data.dart';
+import 'package:provider/provider.dart';
 
 class Student {
   final String photo;
@@ -204,9 +206,7 @@ class Userlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Users'),
-      ),
+      appBar: AppBar(),
       body: ListView.builder(
         itemCount: students.length,
         itemBuilder: (context, index) {
@@ -218,10 +218,10 @@ class Userlist extends StatelessWidget {
               decoration: BoxDecoration(
                 // Add border
                 borderRadius: BorderRadius.circular(8.0),
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.onSecondary,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.3), // Shadow color
+                    color: Theme.of(context).colorScheme.shadow, // Shadow color
                     spreadRadius: 2.5, // Spread radius
                     blurRadius: 1, // Blur radius
                     offset: Offset(0, 0), // Shadow position
@@ -254,9 +254,17 @@ class Userlist extends StatelessWidget {
                   ),
                   title: Text(
                     student.name,
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).colorScheme.background,
+                    ),
                   ),
-                  subtitle: Text(student.id),
+                  subtitle: Text(
+                    student.id,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.background,
+                    ),
+                  ),
                 ),
               ),
             ),

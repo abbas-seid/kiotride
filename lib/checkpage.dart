@@ -37,7 +37,7 @@ class _CheckPageState extends State<CheckPage> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         actions: [
           Image.asset(
             'assets/bus.png',

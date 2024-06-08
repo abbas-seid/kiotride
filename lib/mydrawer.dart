@@ -45,21 +45,30 @@ class MyDrawer extends StatelessWidget {
               )),
           ListTile(
             leading: Icon(Icons.message),
-            title: Text('Messages'),
+            title: Text(
+              'Messages',
+              style: TextStyle(fontWeight: FontWeight.w800),
+            ),
             onTap: () {
               // Handle the tap here
             },
           ),
           ListTile(
             leading: Icon(Icons.account_circle),
-            title: Text('Profile'),
+            title: Text(
+              'Profile',
+              style: TextStyle(fontWeight: FontWeight.w800),
+            ),
             onTap: () {
               // Handle the tap here
             },
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            title: Text(
+              'Settings',
+              style: TextStyle(fontWeight: FontWeight.w800),
+            ),
             onTap: () {
               // Handle the tap here
             },
@@ -71,6 +80,7 @@ class MyDrawer extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
+              color: Theme.of(context).colorScheme.primary,
             ),
             textAlign: TextAlign.center,
           ))

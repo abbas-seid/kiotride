@@ -45,6 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
     var screenSize = MediaQuery.of(context).size;
     var widthy = screenSize.width;
     var heighty = screenSize.height;
+    IconData iLight = Icons.wb_sunny;
+    IconData iDark = Icons.nights_stay;
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
@@ -56,6 +58,12 @@ class _LoginScreenState extends State<LoginScreen> {
           style:
               TextStyle(fontWeight: FontWeight.bold, color: Color(0xff3B3B3B)),
         ),
+        actions: [
+          IconButton(
+            onPressed: Provider.of<ThemeProvider>(context).toggleTheme,
+            icon: Icon(iLight),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -68,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFFF7CB2D)),
+                    color: Theme.of(context).colorScheme.surface),
               ),
               Text(
                 'Please Enter Your Detail',
@@ -126,7 +134,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       });
                     },
                   ),
-                  const Text('Remember Me'),
+                  Text(
+                    'Remember Me',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.background,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(
@@ -138,9 +151,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     Size(widthy * 0.8, heighty * 0.06),
                   ),
                   backgroundColor: MaterialStateProperty.all<Color>(
-                      Color(0xFFF7CB2D)), // Set the background color
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
+                      Theme.of(context)
+                          .colorScheme
+                          .surface), // Set the background color
+                  foregroundColor: MaterialStateProperty.all<Color>(
+                      Theme.of(context).colorScheme.onSurface),
                 ),
                 onPressed: _login,
                 child: const Text('Login'),
