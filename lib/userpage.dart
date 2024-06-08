@@ -4,6 +4,8 @@ import 'package:kiotride/buspage.dart';
 import 'package:kiotride/checkpage.dart';
 import 'package:kiotride/userpage.dart';
 import 'package:kiotride/bottombar.dart';
+import 'package:kiotride/theme_data.dart';
+import 'package:provider/provider.dart';
 
 class UserPage extends StatefulWidget {
   final String name;
@@ -30,15 +32,16 @@ class _UserPageState extends State<UserPage> {
     var widthy = screenSize.width;
     var heighty = screenSize.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         leading: Image.asset(
           'assets/bus.png',
         ),
         title: Text(
           'KIOTRIDE',
-          style:
-              TextStyle(fontWeight: FontWeight.bold, color: Color(0xff3B3B3B)),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       body: Container(
@@ -101,8 +104,9 @@ class Displayer extends StatelessWidget {
             height: heighty * 0.09, // Adjust the height as needed
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color:
-                  Color(0xFFF7CB2D), // Added color to make the border visible
+              color: Theme.of(context)
+                  .colorScheme
+                  .surface, // Added color to make the border visible
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -110,14 +114,16 @@ class Displayer extends StatelessWidget {
                 Icon(
                   Icons.assignment_ind_rounded,
                   size: 30,
-                  color: Colors.white, // Changed color for visibility
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface, // Changed color for visibility
                 ),
                 Text(
                   name,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white, // Changed color for visibility
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
               ],
@@ -128,8 +134,9 @@ class Displayer extends StatelessWidget {
             height: heighty * 0.09, // Adjust the height as needed
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color:
-                  Color(0xFFF7CB2D), // Added color to make the border visible
+              color: Theme.of(context)
+                  .colorScheme
+                  .surface, // Added color to make the border visible
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -137,14 +144,18 @@ class Displayer extends StatelessWidget {
                 Icon(
                   Icons.insights,
                   size: 30,
-                  color: Colors.white, // Changed color for visibility
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface, // Changed color for visibility
                 ),
                 Text(
                   idnumb,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white, // Changed color for visibility
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onSurface, // Changed color for visibility
                   ),
                 ),
               ],
@@ -155,8 +166,7 @@ class Displayer extends StatelessWidget {
             height: heighty * 0.09, // Adjust the height as needed
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color:
-                  Color(0xFFF7CB2D), // Added color to make the border visible
+              color: Theme.of(context).colorScheme.surface,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -164,14 +174,18 @@ class Displayer extends StatelessWidget {
                 Icon(
                   Icons.bus_alert,
                   size: 30,
-                  color: Colors.white, // Changed color for visibility
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface, // Changed color for visibility
                 ),
                 Text(
                   buscode,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white, // Changed color for visibility
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onSurface, // Changed color for visibility
                   ),
                 ),
               ],

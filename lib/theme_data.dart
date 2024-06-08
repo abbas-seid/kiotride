@@ -20,7 +20,7 @@ ThemeData lightmode = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
-      color: Colors.black, // Change label color here
+      color: Colors.white, // Change label color here
     ),
   ),
   listTileTheme: ListTileThemeData(
@@ -62,7 +62,7 @@ ThemeData darkmode = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
-      color: Colors.white, // Change label color here
+      color: Colors.black,
     ),
   ),
   listTileTheme: ListTileThemeData(
