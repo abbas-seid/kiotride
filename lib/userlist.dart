@@ -52,7 +52,7 @@ final List<Student> students = [
       id: 'Wour/4605/13',
       buscode: 'Code-3312'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/dani.webp',
       name: 'Daniel Gebre',
       id: '0685/13',
       buscode: 'Code-3312'),
@@ -62,7 +62,7 @@ final List<Student> students = [
       id: 'Wour/0715/13',
       buscode: 'Code-3312'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/ela.webp',
       name: 'Elias Getachew',
       id: 'Wour/3948/13',
       buscode: 'Code-3313'),
@@ -82,7 +82,7 @@ final List<Student> students = [
       id: 'Wour/4069/13',
       buscode: 'Code-3313'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/fkr.webp',
       name: 'Fikir Belete',
       id: '1036/13',
       buscode: 'Code-3313'),
@@ -102,7 +102,7 @@ final List<Student> students = [
       id: 'Wour/1534/13',
       buscode: 'Code-3313'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/her.webp',
       name: 'Hermela Solomon',
       id: 'Wour/1307/13',
       buscode: 'Code-3313'),
