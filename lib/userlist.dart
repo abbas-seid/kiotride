@@ -87,7 +87,7 @@ final List<Student> students = [
       id: '1036/13',
       buscode: 'Code-3313'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/firdos.webp',
       name: 'Firdos Mohammed',
       id: 'Wour/3927/13',
       buscode: 'Code-3313'),
