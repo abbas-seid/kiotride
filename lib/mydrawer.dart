@@ -10,7 +10,7 @@ import 'package:kiotride/theme_data.dart';
 import 'package:provider/provider.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
+  const MyDrawer({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,30 +21,28 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/wolloback.webp'),
-                  fit: BoxFit.cover,
-                ),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/wolloback.webp'),
+                fit: BoxFit.cover,
               ),
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: IconButton(
-                      onPressed:
-                          Provider.of<ThemeProvider>(context).toggleTheme,
-                      icon: Icon(iLight),
-                    ),
+            ),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: IconButton(
+                    onPressed: Provider.of<ThemeProvider>(context).toggleTheme,
+                    icon: Icon(iLight),
                   ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      '',
-                    ),
-                  ),
-                ],
-              )),
+                ),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(''),
+                ),
+              ],
+            ),
+          ),
           ListTile(
             leading: Icon(Icons.account_circle),
             title: Text(
@@ -66,7 +64,9 @@ class MyDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Settings()));
+                context,
+                MaterialPageRoute(builder: (context) => Settings()),
+              );
             },
           ),
           ListTile(
@@ -76,25 +76,62 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
-              );
+              _showLogoutDialog(context);
             },
           ),
           SizedBox(height: 150),
           Center(
-              child: Text(
-            '©Copyright. \nAll rights reserved.',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 22,
-              color: Theme.of(context).colorScheme.primary,
+            child: Text(
+              '© Copyright. \nAll rights reserved.',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 22,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ))
+          )
         ],
       ),
+    );
+  }
+
+  void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Confirm Logout'),
+          content: Text('Are you sure you want to log out?'),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                'Cancel',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text(
+                'Logout',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+              ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

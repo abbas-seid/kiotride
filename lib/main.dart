@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     // Execute the navigation after the frame has been built
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      // Navigates to the BusPage after 2 seconds
+      // Navigates to the BusPage after 4 seconds
       Future.delayed(Duration(seconds: 4), () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
