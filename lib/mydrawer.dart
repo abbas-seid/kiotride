@@ -76,7 +76,7 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             onTap: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => LoginScreen()),
               );

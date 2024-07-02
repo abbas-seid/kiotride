@@ -82,9 +82,9 @@ class BusDesc extends StatelessWidget {
                       color: Theme.of(context).colorScheme.onSecondary,
                     ),
                     child: Text(
-                      'Your Bus!!!',
+                      'Striding For Quality!!',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Theme.of(context).colorScheme.primary,
                       ),

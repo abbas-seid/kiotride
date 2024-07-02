@@ -127,7 +127,7 @@ final List<Student> students = [
       id: 'Wour/3953/13',
       buscode: 'Code-3314'),
   Student(
-      photo: 'assets/girlethio.jpg', // Placeholder image URL
+      photo: 'assets/peoples/leul.webp', // Placeholder image URL
       name: 'Leulseged Eshetu',
       id: 'Wour/4537/13',
       buscode: 'Code-3314'),
@@ -137,7 +137,7 @@ final List<Student> students = [
       id: 'Wour/1656/13',
       buscode: 'Code-3314'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/mesud.webp',
       name: 'Mesud Omar',
       id: 'Wour/4536/13',
       buscode: 'Code-3314'),
@@ -167,7 +167,7 @@ final List<Student> students = [
       id: 'Wour/4531/13',
       buscode: 'Code-3315'),
   Student(
-      photo: 'assets/girlethio.jpg',
+      photo: 'assets/peoples/salim.webp',
       name: 'Salim Abdu',
       id: 'Wour/3957/13',
       buscode: 'Code-3315'),
@@ -192,7 +192,7 @@ final List<Student> students = [
       id: 'Wour/4194/13',
       buscode: 'Code-3315'),
   Student(
-      photo: 'assets/girlethio.jpg', // Placeholder image URL
+      photo: 'assets/peoples/tinsu.webp', // Placeholder image URL
       name: 'Tinsae Kefale',
       id: 'Wour/4194/13',
       buscode: 'Code-3315'),

@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Execute the navigation after the frame has been built
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       // Navigates to the BusPage after 2 seconds
-      Future.delayed(Duration(seconds: 3), () {
+      Future.delayed(Duration(seconds: 4), () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => LoginScreen(),
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               child: Text('WELCOME',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Theme.of(context).colorScheme.background,
                     fontSize: 30,
                     fontFamily: 'Cinzel',
                     fontWeight: FontWeight.bold,
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               child: Text('Your Campus, Your Ride, Your Way!!!',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Theme.of(context).colorScheme.background,
                     fontSize: 20,
                   )),
             ),
