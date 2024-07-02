@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: Provider.of<ThemeProvider>(context).themeData,
-      darkTheme: darkmode,
+      darkTheme: Provider.of<ThemeProvider>(context).themeData,
       home: MyHomePage(),
       routes: {
         '/buspage': (context) => BusPage(),
