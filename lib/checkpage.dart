@@ -21,10 +21,10 @@ class _CheckPageState extends State<CheckPage> {
   bool _searched = false;
 
   void _searchStudent() {
-    final query = _idController.text;
+    final query = _idController.text.toLowerCase();
     setState(() {
       _filteredStudents = widget.students.where((student) {
-        return student.id.contains(query);
+        return student.id.toLowerCase().contains(query);
       }).toList();
       _searched = true;
     });

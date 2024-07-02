@@ -144,7 +144,7 @@ class BusDescItem extends StatelessWidget {
           Text(
             content,
             style: TextStyle(
-                fontSize: 20,
+                fontSize: 29,
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.primary),
           ),

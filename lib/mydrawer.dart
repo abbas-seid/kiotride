@@ -69,13 +69,26 @@ class MyDrawer extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => Settings()));
             },
           ),
-          SizedBox(height: 90),
+          ListTile(
+            leading: Icon(Icons.logout_sharp),
+            title: Text(
+              'Log Out',
+              style: TextStyle(fontWeight: FontWeight.w800),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+              );
+            },
+          ),
+          SizedBox(height: 150),
           Center(
               child: Text(
-            'Designed and Developed By Group 5',
+            '©Copyright. \nAll rights reserved.',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 22,
               color: Theme.of(context).colorScheme.primary,
             ),
             textAlign: TextAlign.center,
