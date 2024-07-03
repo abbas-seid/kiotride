@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:kiotride/login.dart';
-import 'package:kiotride/bottombar.dart';
-import 'package:kiotride/checkpage.dart';
-import 'package:kiotride/userpage.dart';
 import 'package:kiotride/aboutus.dart';
 import 'package:kiotride/settings.dart';
 import 'package:kiotride/theme_data.dart';

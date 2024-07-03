@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kiotride/login.dart';
 import 'package:kiotride/bottombar.dart';
-import 'package:kiotride/checkpage.dart';
-import 'package:kiotride/userpage.dart';
 import 'package:kiotride/busdesc.dart';
 import 'package:kiotride/mydrawer.dart';
-import 'package:kiotride/theme_data.dart';
-import 'package:provider/provider.dart';
 
 class BusPage extends StatefulWidget {
   const BusPage({super.key});
@@ -21,8 +16,7 @@ class _BusPageState extends State<BusPage> {
     var screenSize = MediaQuery.of(context).size;
     var widthy = screenSize.width;
     var heighty = screenSize.height;
-    IconData iLight = Icons.wb_sunny;
-    IconData iDark = Icons.nights_stay;
+
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(

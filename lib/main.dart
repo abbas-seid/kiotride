@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:async' show Timer;
 import 'package:kiotride/login.dart';
 import 'package:kiotride/buspage.dart';
-import 'package:kiotride/checkpage.dart';
-import 'package:kiotride/userpage.dart';
-import 'package:kiotride/bottombar.dart';
-import 'package:kiotride/busdesc.dart';
 import 'package:provider/provider.dart';
 import 'package:kiotride/theme_data.dart';
 
@@ -46,7 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    // Execute the navigation after the frame has been built
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       // Navigates to the BusPage after 4 seconds
       Future.delayed(Duration(seconds: 4), () {
